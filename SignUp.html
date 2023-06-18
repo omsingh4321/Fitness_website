@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="SignUp.css">
+    
+    
+
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            <div class="header">
+                <h1>User Registration</h1>
+                <p>It will take 30 seconds</p>
+            </div>
+            <div class="main">
+                <form onsubmit="" action="./main.html" class="form">
+
+                    <p style="color: white">Full name</p>
+                    <input type="text" class="text-box" placeholder="Om Singh" required id="naam"><br><br>
+
+                    <p style="color: white">DOB</p>
+                    <input type="text" class="text-box" placeholder="DD/MM/YYYY" id="DOB"><br><br>
+
+                    <p style="color: white">Height</p>
+                    <input type="text" class="text-box" id="height" placeholder="in inches"><br><br>
+                    <p style="color: white">Email</p><br>
+                    <input type="email" class="text-box" id="Mail" placeholder="om43singh21@gmail.com">
+                    <br><br>
+                    <p style="color: white">Password</p>
+                    <input type="password" class="text-box" id="Password" placeholder="Minimum 8 characters"><br><br>
+                    <p style="color: white">Confirm Password</p>
+                    <input type="password" class="text-box" id="Password1" placeholder="Minimum 8 characters"><br><br>
+                    <div class="adjust">
+                       
+                        <br>
+                        <p>Gender</p><br>
+                        <input type="radio" name="one">Male
+                        <input type="radio" name="one">Female
+                        <input type="radio" name="one">Other<br><br>
+                        <button class="submit" type="submit">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+           
+        </div>
+    </div>
+    <script src="Validate.js"></script>
+
+</body>
+
+</html>

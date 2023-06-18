@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.outer{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1519865885898-a54a6f2c7eea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1958&q=80');
+    display: grid;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 2px solid black;
+}
+.inner{
+   width: 35vw;
+   height: 95vh;
+   position: relative;
+   top: 3%;
+   left: 32%;
+   padding: 10px;
+   border: 3px solid white;
+   background-color: rgb(22, 18, 18);
+   border-radius: 20px;
+
+}
+.inner:hover{
+    border: 5px solid white;
+    cursor: pointer;
+    box-shadow: 18px 18px 38px rgb(203, 198, 198);
+}
+
+.header h1{
+    font-size: 5vh;
+    color: white;
+ 
+}
+.header p{
+font-size: 2vh;
+color: white;
+}
+.header{
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.submit{
+    width: 18vw ; 
+    padding: 7px;
+    position: relative;
+    left: 18%;
+    margin-top: 8px;
+
+}
+
+.text-box{
+width: 19vw;
+height: 3vh;
+padding: 7px;
+border-radius: 10px;
+margin-top: 10px;
+border: none;
+background-color: rgb(16, 13, 13);
+color: rgb(247, 246, 245);
+border-bottom: 2px solid white;
+outline: none;
+}
+button{
+    border-radius: 10px;
+    background-color: rgb(158, 156, 156);
+    font-size: 4vh;
+    font-weight: bold;
+}
+button:hover{
+    background-color: rgb(151, 139, 139);
+}
+
+.Footer{
+    color: aliceblue;
+}
+.adjust{
+    color: aliceblue;
+    padding: 6px;
+    margin-left: 0px;
+}
+p{
+    height: 3vh;
+    font-weight: bold;
+}

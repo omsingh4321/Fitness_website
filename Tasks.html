@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .form{
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+        .fill{
+            text-align: left;
+        }
+        .labels{
+            margin-right: 20px;
+        }
+        .taskList{
+            text-align: left;
+        }
+        .tasks{
+            width: 100%;
+        }
+        th,td{
+            padding-top: 0px;
+            padding-bottom: 12px;
+            padding-left: 0px;
+            padding-right: 50px;
+        }
+        input{
+            border-radius: 50px;
+            height: 25px;
+            width: 170px;
+        }
+        label{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        button{
+            border: 2px solid black;
+            background-color: aquamarine;
+            border-radius: 20px;
+            padding: 10px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body style="background-image: linear-gradient(to right,rgb(145, 223, 198),rgb(216, 195, 156));">
+    <div class="form">
+        <h1 style="color: blueviolet; font-size: 60px;">Daily Tasks</h1><br>
+        <div class="fill">
+            <label for="date" class="labels">Enter date</label>
+            <input type="date" name="date" id="date"><br><br>
+            <label for="name" class="labels">Task heading</label>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="description" class="labels">Task description</label>
+            <input type="text" name="description" id="description"><br><br><br>
+            <button type="submit" onclick="newItem()" class="submitBtn">Add task</button>
+        </div>
+        <br><br><br>
+        <div class="taskList">
+            <h4 style="font-size: 30px;">Your task list</h4>
+            <table class="tasks" border="">
+                <thead>
+                    <tr>
+                        <th style="width: 8%;" align="center">Index</th>
+                        <th style="width: 12%;" align="center">Date</th>
+                        <th style="width: 20%;" align="center">Task name</th>
+                        <th style="width: 60%; " align="center">Task Description</th>
+                    </tr>
+                </thead>
+                <tbody class="listing">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        index=1;
+        function newItem(){
+            var date=document.getElementById("date").value;
+            var name=document.getElementById("name").value;
+            var description=document.getElementById("description").value;
+            document.querySelector(".listing").innerHTML+="<tr><td>"+index+"</td><td>"+date+"</td><td>"+name+"</td><td>"+description+"</td></tr>";
+            index++;
+        }
+    </script>
+</body>
+</html>

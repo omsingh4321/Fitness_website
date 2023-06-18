@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Fitness_tracker</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./main.css">
+   
+</head>
+<body>
+
+    <div class="animated-div">
+        <img src="./images/Football_(soccer_ball).svg.png" alt="Not Able To Load Image">
+        
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(".animated-div").click(function() {
+                $(".animated-div").fadeOut(10, function() {
+                    // Animation complete.
+                    $(this).fadeIn(1000);
+                });
+            });
+        });
+    </script>
+   
+    <div class="container">
+        
+          <div class="navbar box">
+           
+            <ul>
+                
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="./cont.html">Contact</a></li>
+                <li><a href="./SignUp.html">Register</a></li>
+                <li><a class="active" href="#about">About</a></li>
+               <li> <div class="clock">
+                <div class="time">
+                </div>
+                <script>
+                     let displayTime=document.querySelector(".time")
+            
+                      let ticking=function(){
+                         let currDate= new Date();
+            
+                         let hr= currDate.getHours();
+                         let min= currDate.getMinutes();
+                         let sec=currDate.getSeconds();
+                         let tellme=false;
+                         if(hr>=12){
+                            hr=hr%12;
+                            tellme=true;
+                         }
+                           
+
+                         let h= hr<10 ? "0" +hr :hr;
+                         let m= min<10 ? "0" +min :min;
+                         let s= sec<10 ? "0"+ sec :sec;
+                         if(tellme) 
+                         displayTime.innerHTML=h + ":"+ m+ ":"+ s + " PM";
+                         else displayTime.innerHTML=h + ":"+ m+ ":"+ s + " AM";
+                      }
+                      setInterval(ticking,1000);
+            
+                </script>
+               </div></li>
+              </ul>
+          </div>
+          <div class="sidebar box">
+            <ul >
+                <li><a class="active" href="#home">Various Fitness Properties</a></li>
+                <li><a href="./pred.html">Pre-Designed Plans</a></li><br>
+                <li><a href="./track.html">Nutrition-tracking-page</a></li>
+                <li><a href="./chl.html">challenges-Page</a></li><br>
+                <li><a href="./Tasks.html">ToDo Plan List For Me</a></li>
+                <li><a href="./StopWatch.html">StopWatch</a></li>
+                <li><a href="https://www.healthline.com/health/fitness-nutrition/healthy-lifestyle-benefits">About healthy activities</a></li>
+                <li><a href="https://www.healthline.com/health/fitness-nutrition/healthy-lifestyle-benefits">About healthy diet</a></li>
+                <li><a href="https://www.healthline.com/health/fitness-nutrition/healthy-lifestyle-benefits">About body movements</a></li>
+                
+              </ul>
+          </div>
+          <div class="dashboard box">
+              
+            <div class="gallery" >
+                <div class="box_1" id="box1" style="background-image: url(https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1100&q=80);">2</div>
+                <div class="box_1" style="background-image: url(https://plus.unsplash.com/premium_photo-1684274186188-2a7abbd85b48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);">1</div>
+                <div class="box_1" style="background-image: url(https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);">3</div>
+                <div class="box_1" style="background-image: url(https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80);">4</div>
+                <div class="box_1" style="background-image: url(https://images.unsplash.com/photo-1594882645126-14020914d58d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=885&q=80);">5</div>
+                <div class="box_1" style="background-image: url(https://plus.unsplash.com/premium_photo-1674420730676-8c47e2a404a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80);">6</div>
+                <div class="box_1" id="box7" style="background-image: url(https://images.unsplash.com/photo-1486218119243-13883505764c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80);">7</div>
+            </div>
+            <p style="font-size: 150%; padding: 10px; font-weight: bold; margin-top: 5px;"><i>
+                Fitness refers to the state of being physically fit and healthy. It encompasses various aspects such as cardiovascular<br> endurance, muscular strength, flexibility, and body composition. Engaging in regular physical activity and maintaining a <br>balanced diet contribute to overall fitness. Fitness benefits the human body in numerous ways, including:
+             </i></p>
+
+          </div>
+
+          <div class="footer box" id="lower">
+               <h2>World-Health</h2>   
+            <p>
+                Praesent sed lobortis mi. Suspendisse vel placerat ligula.<br> Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus.<br> Aliquam in arcu eget velit pulvinar dictum vel in justo.
+               </p>
+               
+          </div>
+
+    </div>
+    
+</body>
+</html>
