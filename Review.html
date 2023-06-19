@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Review Page</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.review {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.review p {
+  margin: 0;
+}
+
+#reviewForm {
+  margin-top: 20px;
+}
+
+#reviewForm label {
+  display: block;
+  font-weight: bold;
+}
+
+#reviewForm input[type="text"],
+#reviewForm textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#reviewForm button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#reviewForm button:hover {
+  background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Customer Reviews</h1>
+
+  <div id="reviews"></div>
+
+  <form id="reviewForm">
+    <h2>Write a Review</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br><br>
+    <label for="rating">Rating:</label>
+    <select id="rating" required>
+      <option value="">-- Select Rating --</option>
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select><br><br>
+    <label for="comment">Comment:</label><br>
+    <textarea id="comment" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  let ticking=function(){
+                         let currDate= new Date();
+            
+                         let hr= currDate.getHours();
+                         let min= currDate.getMinutes();
+                         let sec=currDate.getSeconds();
+                         let tellme=false;
+                         if(hr>=12){
+                            hr=hr%12;
+                            tellme=true;
+                         }
+                           
+
+                         let h= hr<10 ? "0" +hr :hr;
+                         let m= min<10 ? "0" +min :min;
+                         let s= sec<10 ? "0"+ sec :sec;
+                         if(tellme) 
+                           return h + ":"+ m+ ":"+ s + " PM";
+                         else return h + ":"+ m+ ":"+ s + " AM";
+                      }
+                      setInterval(ticking,1000);
+  
+  // Get form values
+  var name = document.getElementById("name").value;
+  var rating = document.getElementById("rating").value;
+  var comment = document.getElementById("comment").value;
+  
+  // Create review element
+  var reviewElement = document.createElement("div");
+  reviewElement.className = "review";
+  
+  // Create review content
+  var reviewContent = document.createElement("p");
+  reviewContent.innerHTML = "<strong>Name:</strong> " + name + "<br><strong>Rating:</strong> " + rating + "<br><strong>Comment:</strong> " + comment + "<br><strong>Time:</strong> "+ ticking() ;
+  
+  // Append review content to review element
+  reviewElement.appendChild(reviewContent);
+  
+  // Append review element to reviews section
+  document.getElementById("reviews").appendChild(reviewElement);
+  
+  // Reset form
+  document.getElementById("reviewForm").reset();
+});
+
+  </script>
+</body>
+</html>
